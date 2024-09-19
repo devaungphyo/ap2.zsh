@@ -44,7 +44,7 @@ function directory() {
 # git
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[green]%}[";
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} ";
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_no_bold[red]%}✖%{$fg_no_bold[cyan]%}]";
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_no_bold[red]%}✖%{$fg_no_bold[green]%}]";
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_no_bold[green]%}]";
 
 function update_git_status() {
@@ -94,7 +94,7 @@ output_command_execute_after() {
     local color_reset="$reset_color";
     cmd="${color_cmd}${cmd}${color_reset}"
 
-    local time="[$(date +%H:%M:%S)]"
+local time="[$(date +%I:%M:%S%p)]";
     local color_time="$fg_no_bold[cyan]";
     time="${color_time}${time}${color_reset}";
 
@@ -158,4 +158,3 @@ TRAPALRM() {
 # prompt with elements on separate lines
 PROMPT='$(real_time) $(directory) $(git_status)
 $(command_status) '
-
