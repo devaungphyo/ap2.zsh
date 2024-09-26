@@ -36,7 +36,7 @@ function login_info() {
 # directory
 function directory() {
    local color="%{$fg_no_bold[cyan]%}";
-    local directory="${PWD/#$HOME/🏠}"; # Replaces the full home path with the home icon (🏠)
+    local directory="${PWD/#$HOME/λ}"; # Replaces the full home path with the home icon (λ)
     local color_reset="%{$reset_color%}";
     echo "${color}[${directory}]${color_reset}";
 }
